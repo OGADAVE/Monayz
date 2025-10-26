@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Monayz Foods</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+   
+
+    /* HERO */
+.hero {
+  position: relative;
+  background: url('images/LASERP.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  background-attachment: fixed;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay with 40% opacity */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+   font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  padding: 12px 25px;
+  background: #FFD700;
+  color: #009640;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta-btn:hover {
+  background: #ffcc00;
+}
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      color: #008000;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .contact-info {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .contact-info h3 {
+      margin-bottom: 10px;
+      color: #f4b400;
+    }
+
+    .contact-form {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .contact-form button {
+      background: #008000;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .contact-form button:hover {
+      background: #006400;
+    }
+
+    .socials {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .socials a {
+      margin: 0 10px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .socials a:hover {
+      color: #008000;
+    }
+
+    .map {
+      margin-top: 40px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+    <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <div class="logo-area">
+        <img src="images/monayz-logo.png" alt="Monayz Logo">
+        <span class="brand-name">Monayz Foods</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html"class="active">Contact</a></li>
+      </ul>
+      <a href="https://wa.me/2348057453601" target="_blank" class="order-btn">Order Now</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+   <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+    <h1>Contact Us</h1>
+     <a href="contact.html" class="cta-btn">Contact Us</a>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="container">
+    <h2>Get In Touch</h2>
+    <div class="contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>Our Office</h3>
+        <p><strong>Address:</strong> 5, Ajayi Street, Atan Kekere, Ipaja Ayobo, Lagos, Nigeria</p>
+        <p><strong>Phone:</strong> +234 701 035 9776, +234 704 740 5522, +234 813 655 0561</p>
+        <p><strong>Email:</strong> fbmonayajo@yahoo.com, monayfoods@gmail.com</p>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form action="https://formspree.io/f/yourFormID" method="POST">
+        <input type="text" name="name" placeholder="Your Full Name" required>
+        <input type="email" name="email" placeholder="Your Email Address" required>
+        <textarea name="message" rows="6" placeholder="Your Message..." required></textarea>
+        <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Social Media -->
+    <div class="socials">
+      <h3>Follow Us</h3>
+      <a href="#">Facebook</a> | 
+      <a href="#">Instagram</a> | 
+      <a href="#">Twitter</a> | 
+      <a href="#">WhatsApp</a>
+    </div>
+
+    <!-- Google Maps -->
+    <div class="map">
+      <iframe src="https://maps.app.goo.gl/PxqJPsDXB2wHk3z17" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+<section class="certifications">
+  <div class="container">
+    <ul class="cert-list">
+      <li><i class="fas fa-check-circle"></i> NAFDAC Approved</li>
+      <li><i class="fas fa-check-circle"></i> SON Certified</li>
+      <li><i class="fas fa-check-circle"></i> FDA Approved</li>
+      <li><i class="fas fa-leaf"></i> No Preservatives</li>
+    </ul>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Monayz. All Rights Reserved.</p>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/2348057453601" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</body>
+</html>

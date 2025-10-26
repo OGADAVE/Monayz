@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products | Monayz</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #fff;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 90%;
+      padding: 20px;
+      position: relative;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    .close {
+      position: absolute;
+      top: 12px; right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Carousel */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-height: 300px;
+      margin-bottom: 15px;
+    }
+    .carousel .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .carousel img {
+      width: 100%;
+      margin: auto;
+      max-width: 100%;
+      max-height: 50vh;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <div class="logo-area">
+        <img src="images/monayz-logo.png" alt="Monayz Logo">
+        <span class="brand-name">Monayz Foods</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="https://wa.me/2348057453601" target="_blank" class="order-btn">Order Now</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Our Products</h1>
+      <p>Browse our wide selection of food items</p>
+    </div>
+  </section>
+
+  <!-- PRODUCT LISTING -->
+  <section id="products" class="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      
+      <!-- Product: Pepper Sauce 1kg -->
+      <div class="product-card">
+        <img src="images/monay-bigpeppersauce.jpg" alt="Pepper Sauce big">
+        <h3>Monayz Pepper Sauce (Big)</h3>
+        <p class="price">₦25,000 / $20</p>
+        <div class="buttons">
+          <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Pepper%20Sauce%20(1kg)%20for%20₦25,000/$20" class="order-now">Order Now</a>
+          <button class="details-btn" onclick="openModal('pepper-1kg')">Details</button>
+        </div>
+      </div>
+
+       <!-- Product: Ayamashe 1kg -->
+      <div class="product-card">
+        <img src="images/monay-bigayamashe.jpg" alt="Ayamashe big">
+        <h3>Monayz Ayamashe (Big)</h3>
+        <p class="price">₦25,000 / $20</p>
+        <div class="buttons">
+          <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Ayamashe%20(1kg)%20for%20₦25,000/$20" class="order-now">Order Now</a>
+          <button class="details-btn" onclick="openModal('Ayamashe-1kg')">Details</button>
+        </div>
+      </div>
+
+      <!-- Product: Pepper Sauce 500g -->
+      <div class="product-card">
+        <img src="images/monay-smallpeppersauce.jpg" alt="Pepper Sauce small">
+        <h3>Monayz Pepper Sauce (Small)</h3>
+        <p class="price">₦18,000 / $15</p>
+        <div class="buttons">
+          <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Pepper%20Sauce%20(500g)%20for%20₦18,000/$15" class="order-now">Order Now</a>
+          <button class="details-btn" onclick="openModal('pepper-500')">Details</button>
+        </div>
+      </div>
+
+      <!-- Product: Ayamashe 500g -->
+      <div class="product-card">
+        <img src="images/monay-smallayamashe.jpg" alt="Ayamashe small">
+        <h3>Monayz Ayamashe (Small)</h3>
+        <p class="price">₦18,000 / $15</p>
+        <div class="buttons">
+          <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Ayamashe%20(500g)%20for%20₦18,000/$15" class="order-now">Order Now</a>
+          <button class="details-btn" onclick="openModal('Ayamashe-500')">Details</button>
+        </div>
+      </div>
+
+      <!-- Product: Chips -->
+      <div class="product-card">
+        <img src="images/monayz-chips.jpeg" alt="Chips">
+        <h3>Chips (550g)</h3>
+        <p class="price">₦2,000</p>
+        <div class="buttons">
+          <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Chips%20(550g)%20for%20₦2,000" class="order-now">Order Now</a>
+          <button class="details-btn" onclick="openModal('chips')">Details</button>
+        </div>
+      </div>
+
+      <!-- Product: Chili Oil -->
+      <div class="product-card">
+        <img src="images/chili-oil.jpg" alt="Chili Oil">
+        <h3>Chili Oil</h3>
+        <p class="price">₦10,000 / $8</p>
+        <div class="buttons">
+          <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Chili%20Oil%20for%20₦10,000/$8" class="order-now">Order Now</a>
+          <button class="details-btn" onclick="openModal('chili-oil')">Details</button>
+        </div>
+      </div>
+
+      <!-- Product: Bread -->
+      <div class="product-card">
+        <img src="images/monayz-bread.jpeg" alt="Bread">
+        <h3>Bread (Big)</h3>
+        <p class="price">₦1,500</p>
+        <div class="buttons">
+          <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Bread%20(1kg)%20for%20₦1,500" class="order-now">Order Now</a>
+          <button class="details-btn" onclick="openModal('bread')">Details</button>
+        </div>
+      </div>
+
+      <!-- Product: Popcorn -->
+      <div class="product-card">
+        <img src="images/monayz-popcorn.jpeg" alt="Popcorn">
+        <h3>Popcorn</h3>
+        <p class="price">₦500</p>
+        <div class="buttons">
+          <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Popcorn%20for%20₦500" class="order-now">Order Now</a>
+          <button class="details-btn" onclick="openModal('popcorn')">Details</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+<section class="certifications">
+  <div class="container">
+    <ul class="cert-list">
+      <li><i class="fas fa-check-circle"></i> NAFDAC Approved</li>
+      <li><i class="fas fa-check-circle"></i> SON Certified</li>
+      <li><i class="fas fa-check-circle"></i> FDA Approved</li>
+      <li><i class="fas fa-leaf"></i> No Preservatives</li>
+    </ul>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Monayz. All Rights Reserved.</p>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/2348057453601" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- MODALS -->
+  <!-- Pepper Sauce 1kg -->
+  <div id="pepper-1kg" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('pepper-1kg')">&times;</span>
+      <h2>Pepper Sauce (Big)</h2>
+      <div class="carousel">
+        <div class="slides">
+          <img src="images/monay-bigpeppersauce.jpg" alt="Pepper Sauce">
+          <img src="images/monay-bigpeppersauce2.jpg" alt="Pepper Sauce">
+        </div>
+        <button class="prev" onclick="prevSlide(this)">&#10094;</button>
+        <button class="next" onclick="nextSlide(this)">&#10095;</button>
+      </div>
+      <p><strong>Details:</strong> Bigger size of our signature pepper sauce made from fresh chilies and spices.</p>
+      <p><strong>Price:</strong> ₦25,000 / $20</p>
+      <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Pepper%20Sauce%20(500g)%20for%20₦25,000/$20" class="order-now">Order Now</a>
+      <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+    </div>
+  </div>
+
+  <!-- Ayamashe 1kg -->
+  <div id="Ayamashe-1kg" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('Ayamashe-1kg')">&times;</span>
+      <h2>Ayamashe (Big)</h2>
+      <div class="carousel">
+        <div class="slides">
+          <img src="images/monay-bigayamashe.jpg" alt="Pepper Sauce">
+          <img src="images/monay-bigayamashe2.jpg" alt="Pepper Sauce">
+        </div>
+        <button class="prev" onclick="prevSlide(this)">&#10094;</button>
+        <button class="next" onclick="nextSlide(this)">&#10095;</button>
+      </div>
+      <p><strong>Details:</strong> Bigger size of our signature pepper sauce (Ayamashe) made from fresh chilies and spices.</p>
+      <p><strong>Price:</strong> ₦25,000 / $20</p>
+      <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Pepper%20Sauce%20Ayamashe%20(1kg)%20for%20₦25,000/$20" class="order-now">Order Now</a>
+      <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+    </div>
+  </div>
+
+  <!-- Pepper Sauce 500g -->
+  <div id="pepper-500" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('pepper-500')">&times;</span>
+      <h2>Pepper Sauce (Small)</h2>
+      <div class="carousel">
+        <div class="slides">
+          <img src="images/monay-smallpeppersauce.jpg" alt="Pepper Sauce">
+          <img src="images/monay-big&small.jpg" alt="Pepper Sauce">
+        </div>
+        <button class="prev" onclick="prevSlide(this)">&#10094;</button>
+        <button class="next" onclick="nextSlide(this)">&#10095;</button>
+      </div>
+      <p><strong>Details:</strong> Smaller size of our signature pepper sauce made from fresh chilies and spices.</p>
+      <p><strong>Price:</strong> ₦18,000 / $15</p>
+      <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Pepper%20Sauce%20(500g)%20for%20₦18,000/$15" class="order-now">Order Now</a>
+      <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+    </div>
+  </div>
+
+  <!-- Ayamashe 500g -->
+  <div id="Ayamashe-500" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('Ayamashe-500')">&times;</span>
+      <h2>Ayamashe (Small)</h2>
+      <div class="carousel">
+        <div class="slides">
+          <img src="images/monay-smallayamashe.jpg" alt="Pepper Sauce Ayamashe">
+          <img src="images/monay-big&smallayamashe.jpg" alt="Pepper Sauce Ayamashe">
+        </div>
+        <button class="prev" onclick="prevSlide(this)">&#10094;</button>
+        <button class="next" onclick="nextSlide(this)">&#10095;</button>
+      </div>
+      <p><strong>Details:</strong> Smaller size of our signature pepper sauce Ayamashe made from fresh chilies and spices.</p>
+      <p><strong>Price:</strong> ₦18,000 / $15</p>
+      <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Pepper%20Sauce%20Ayamashe%20(500g)%20for%20₦18,000/$15" class="order-now">Order Now</a>
+      <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+    </div>
+  </div>
+
+  <!-- Chips -->
+  <div id="chips" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('chips')">&times;</span>
+      <h2>Chips (550g)</h2>
+      <div class="carousel">
+        <div class="slides">
+          <img src="images/monayz-chips.jpeg" alt="Chips">
+        </div>
+        <button class="prev" onclick="prevSlide(this)">&#10094;</button>
+        <button class="next" onclick="nextSlide(this)">&#10095;</button>
+      </div>
+      <p><strong>Details:</strong> Crispy, crunchy and tasty chips — perfect snack anytime.</p>
+      <p><strong>Price:</strong> ₦2,000</p>
+      <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Chips%20(550g)%20for%20₦2,000" class="order-now">Order Now</a>
+      <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+    </div>
+  </div>
+
+  <!-- Chili Oil -->
+  <div id="chili-oil" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('chili-oil')">&times;</span>
+      <h2>Chili Oil</h2>
+      <div class="carousel">
+        <div class="slides">
+          <img src="images/chili-oil.jpg" alt="Chili Oil">
+          <img src="images/monay-chillioil1.jpg" alt="Chili Oil">
+          <img src="images/monay-chillioil5.jpg" alt="Chili Oil">
+        </div>
+        <button class="prev" onclick="prevSlide(this)">&#10094;</button>
+        <button class="next" onclick="nextSlide(this)">&#10095;</button>
+      </div>
+      <p><strong>Details:</strong> Hot, aromatic chili oil — a spicy kick for every meal.</p>
+      <p><strong>Price:</strong> ₦10,000 / $8</p>
+      <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Chili%20Oil%20for%20₦10,000/$8" class="order-now">Order Now</a>
+      <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+    </div>
+  </div>
+
+  <!-- Bread -->
+  <div id="bread" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('bread')">&times;</span>
+      <h2>Bread (Big)</h2>
+      <div class="carousel">
+        <div class="slides">
+          <img src="images/monayz-bread.jpeg" alt="Bread">
+          <img src="images/monay-3breads.jpg" alt="Bread">
+        </div>
+        <button class="prev" onclick="prevSlide(this)">&#10094;</button>
+        <button class="next" onclick="nextSlide(this)">&#10095;</button>
+      </div>
+      <p><strong>Details:</strong> Soft, fresh bread baked with love.</p>
+      <p><strong>Price:</strong> ₦1,500</p>
+      <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Bread%20(Big)%20for%20₦1,500" class="order-now">Order Now</a>
+      <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+    </div>
+  </div>
+
+  <!-- Popcorn -->
+  <div id="popcorn" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('popcorn')">&times;</span>
+      <h2>Popcorn</h2>
+      <div class="carousel">
+        <div class="slides">
+          <img src="images/monayz-popcorn.jpeg" alt="Popcorn">
+          <img src="images/monayz-popcorn1.jpeg" alt="Popcorn">
+        </div>
+        <button class="prev" onclick="prevSlide(this)">&#10094;</button>
+        <button class="next" onclick="nextSlide(this)">&#10095;</button>
+      </div>
+      <p><strong>Details:</strong> Sweet and crunchy popcorn — perfect for movies and snacking.</p>
+      <p><strong>Price:</strong> ₦500</p>
+      <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Popcorn%20for%20₦500" class="order-now">Order Now</a>
+      <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Modal functions
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    // Close when clicking outside
+    window.onclick = function(event) {
+      document.querySelectorAll('.modal').forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    };
+
+    // Carousel functions
+    function nextSlide(btn) {
+      let slides = btn.parentElement.querySelector(".slides");
+      slides.appendChild(slides.firstElementChild);
+    }
+    function prevSlide(btn) {
+      let slides = btn.parentElement.querySelector(".slides");
+      slides.insertBefore(slides.lastElementChild, slides.firstElementChild);
+    }
+
+// Flutterwave Payment Integration
+const amount = document.getElementById("product-price").value;
+document.getElementById("pay-now").addEventListener("click", function () {
+  FlutterwaveCheckout({
+    public_key: "FLWPUBK-8d85ae71757c0ee2ea82956b5eb17461-X", // Replace with your Flutterwave public key
+    tx_ref: "tx-" + Date.now(),
+    amount: 25000,
+    currency: "NGN",
+    payment_options: "card, banktransfer, ussd",
+    redirect_url: "https://yourwebsite.com/payment-success.html",
+    customer: {
+      email: "fbmonayajo@yahoo.com",
+      phone_number: "2348057453601",
+      name: "Monayz Customer",
+    },
+    customizations: {
+      title: "Monayz Foods Payment",
+      description: "Payment for Product Purchase",
+      logo: "https://monayz.com.ng/images/monayz-logo.png",
+    },
+  });
+});
+  </script>
+</body>
+</html>

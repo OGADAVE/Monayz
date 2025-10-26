@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Successful - Monayz Foods</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f7f9fc;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .success-icon {
+      font-size: 80px;
+      color: #06c167;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+      color: #06c167;
+      font-size: 1.8rem;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    .tx-ref {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      background: #06c167;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      background: #04a055;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="success-icon">✅</div>
+    <h1>Payment Successful!</h1>
+    <p>Thank you for your purchase. Your payment has been received successfully.</p>
+    <div class="tx-ref" id="txRef"></div>
+    <a href="products.html">Back to Store</a>
+  </div>
+
+  <script>
+    // Get transaction reference from URL if Flutterwave redirected with one
+    const urlParams = new URLSearchParams(window.location.search);
+    const txRef = urlParams.get("tx_ref") || urlParams.get("transaction_id");
+
+    if (txRef) {
+      document.getElementById("txRef").textContent = "Transaction Reference: " + txRef;
+    }
+  </script>
+</body>
+</html>
