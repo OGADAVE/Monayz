@@ -2,9 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  
+  <!-- ✅ Basic SEO -->
+  <title>Monayz Foods | Locally Made, Freshly Processed</title>
+  <meta name="description" content="Monayz Foods - Locally made, freshly processed foods like pepper sauce, chili oil, chips, bread, and more. Order online and enjoy quality, taste, and freshness.">
+  <meta name="keywords" content="Monayz Foods, food delivery, Nigerian meals, online food order, Monayz, food store, pepper sauce, chili oil, local food, bread, snacks">
+  <meta name="author" content="Monayz Foods">
+
+  <!-- ✅ Mobile Responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Monayz Foods - Locally made, freshly processed foods like pepper sauce, chili oil, chips, bread, and more.">
-  <title>Monayz Foods</title>
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" href="https://monay.com.ng/images/monayz-logo.png">
+
+  <!-- ✅ Canonical Link -->
+  <link rel="canonical" href="https://monay.com.ng/">
+
+  <!-- ✅ Open Graph (for WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:title" content="Monayz Foods 🍽️ | Locally Made, Freshly Processed">
+  <meta property="og:description" content="Order delicious, locally made food from Monayz Foods — taste the freshness, enjoy the flavor.">
+  <meta property="og:image" content="https://monay.com.ng/images/monayz-logo.png">
+  <meta property="og:url" content="https://monay.com.ng/">
+  <meta property="og:type" content="website">
+
+  <!-- ✅ Twitter Card (for X/Twitter) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Monayz Foods | Locally Made, Freshly Processed">
+  <meta name="twitter:description" content="Order delicious food from Monayz Foods — locally made and freshly processed.">
+  <meta name="twitter:image" content="https://monay.com.ng/images/monayz-logo.png">
+
+  <!-- ✅ Google Verification (Make sure it matches exactly the one Google gave you) -->
+  <meta name="google-site-verification" content="uhM-YdLewDyVDFvoyN4AEBK6kWI5zOghDAk4usOfPRw">
+
+  <!-- ✅ Styles -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -46,7 +76,7 @@
         <h3>Monayz Pepper Sauce (Big and Small)</h3>
         <p class="price">₦18,000 - ₦25,000 / $15 - $20</p>
         <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20to%20order..." class="order-now">Order Now</a>
-        <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+        <button class="pay-now-btn" data-product="Pepper Sauce (Big)" data-amount="25000">Pay Now</button>
       </div>
 
       <div class="product-card">
@@ -54,7 +84,7 @@
         <h3>Monayz Ayamashe (Big and Small)</h3>
         <p class="price">₦18,000 - ₦25,000 / $15 - $20</p>
         <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20to%20order..." class="order-now">Order Now</a>
-        <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+        <button class="pay-now-btn" data-product="Ayamashe (Big)" data-amount="25000">Pay Now</button>
       </div>
 
       <div class="product-card">
@@ -62,7 +92,7 @@
         <h3>Chips (550g)</h3>
         <p class="price">₦2,000</p>
         <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20to%20order..." class="order-now">Order Now</a>
-        <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+        <button class="pay-now-btn" data-product="Chips" data-amount="2000">Pay Now</button>
       </div>
 
       <div class="product-card">
@@ -70,7 +100,7 @@
         <h3>Chili Oil</h3>
         <p class="price">₦10,000 / $8</p>
         <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20to%20order..." class="order-now">Order Now</a>
-        <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+        <button class="pay-now-btn" data-product="chili-oil" data-amount="10000">Pay Now</button>
       </div>
 
       <div class="product-card">
@@ -78,7 +108,7 @@
         <h3>Bread (Big)</h3>
         <p class="price">₦1,500</p>
         <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20to%20order..." class="order-now">Order Now</a>
-        <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+        <button class="pay-now-btn" data-product="Bread (Big)" data-amount="1500">Pay Now</button>
       </div>
 
       <div class="product-card">
@@ -86,7 +116,7 @@
         <h3>Popcorn</h3>
         <p class="price">₦500</p>
         <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20to%20order..." class="order-now">Order Now</a>
-        <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+        <button class="pay-now-btn" data-product="Popcorn" data-amount="500">Pay Now</button>
       </div>
 
       <div class="view-more-container">
@@ -153,5 +183,41 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
+  <script src="https://checkout.flutterwave.com/v3.js"></script>
+
+<script>
+// Flutterwave Payment Integration
+// Attach click listeners to all Pay Now buttons
+  document.querySelectorAll(".pay-now-btn").forEach(button => {
+    button.addEventListener("click", function () {
+      const productName = this.getAttribute("data-product");
+      const amount = parseFloat(this.getAttribute("data-amount"));
+
+      if (typeof FlutterwaveCheckout !== "function") {
+        alert("Payment system not ready. Please refresh and try again.");
+        return;
+      }
+
+      FlutterwaveCheckout({
+        public_key: "FLWPUBK-8d85ae71757c0ee2ea82956b5eb17461-X",
+        tx_ref: "MONAYZ-" + Date.now(),
+        amount: amount,
+        currency: "NGN",
+        payment_options: "card, banktransfer, ussd",
+        redirect_url: "https://monay.com.ng/payment-success.html",
+        customer: {
+          email: "fbmonayajo@yahoo.com",
+          phone_number: "2348057453601",
+          name: "Monayz Customer",
+        },
+        customizations: {
+          title: "Monayz Foods Payment",
+          description: `Payment for ${productName}`,
+          logo: "https://monay.com.ng/images/monayz-logo.png",
+        },
+      });
+    });
+  });
+</script>
 </body>
 </html>

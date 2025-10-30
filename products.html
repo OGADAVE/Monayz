@@ -2,8 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  
+  <!-- ✅ Basic SEO -->
+  <title>Monayz Foods | Locally Made, Freshly Processed</title>
+  <meta name="description" content="Monayz Foods - Locally made, freshly processed foods like pepper sauce, chili oil, chips, bread, and more. Order online and enjoy quality, taste, and freshness.">
+  <meta name="keywords" content="Monayz Foods, food delivery, Nigerian meals, online food order, Monayz, food store, pepper sauce, chili oil, local food, bread, snacks">
+  <meta name="author" content="Monayz Foods">
+
+  <!-- ✅ Mobile Responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Products | Monayz</title>
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" href="https://monay.com.ng/images/monayz-logo.png">
+
+  <!-- ✅ Canonical Link -->
+  <link rel="canonical" href="https://monay.com.ng/">
+
+  <!-- ✅ Open Graph (for WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:title" content="Monayz Foods 🍽️ | Locally Made, Freshly Processed">
+  <meta property="og:description" content="Order delicious, locally made food from Monayz Foods — taste the freshness, enjoy the flavor.">
+  <meta property="og:image" content="https://monay.com.ng/images/monayz-logo.png">
+  <meta property="og:url" content="https://monay.com.ng/">
+  <meta property="og:type" content="website">
+
+  <!-- ✅ Twitter Card (for X/Twitter) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Monayz Foods | Locally Made, Freshly Processed">
+  <meta name="twitter:description" content="Order delicious food from Monayz Foods — locally made and freshly processed.">
+  <meta name="twitter:image" content="https://monay.com.ng/images/monayz-logo.png">
+
+  <!-- ✅ Google Verification (Make sure it matches exactly the one Google gave you) -->
+  <meta name="google-site-verification" content="uhM-YdLewDyVDFvoyN4AEBK6kWI5zOghDAk4usOfPRw">
+
+  <!-- ✅ Styles -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -242,8 +273,8 @@
       <p><strong>Details:</strong> Bigger size of our signature pepper sauce made from fresh chilies and spices.</p>
       <p><strong>Price:</strong> ₦25,000 / $20</p>
       <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Pepper%20Sauce%20(500g)%20for%20₦25,000/$20" class="order-now">Order Now</a>
-      <button class="pay-now" type="button" id="pay-now">Pay Now</button>
-    </div>
+      <button class="pay-now-btn" data-product="Pepper Sauce (Big)" data-amount="25000">Pay Now</button>
+  </div>
   </div>
 
   <!-- Ayamashe 1kg -->
@@ -262,7 +293,7 @@
       <p><strong>Details:</strong> Bigger size of our signature pepper sauce (Ayamashe) made from fresh chilies and spices.</p>
       <p><strong>Price:</strong> ₦25,000 / $20</p>
       <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Pepper%20Sauce%20Ayamashe%20(1kg)%20for%20₦25,000/$20" class="order-now">Order Now</a>
-      <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+      <button class="pay-now-btn" data-product="Ayamashe-1kg (Big)" data-amount="25000">Pay Now</button>
     </div>
   </div>
 
@@ -282,7 +313,7 @@
       <p><strong>Details:</strong> Smaller size of our signature pepper sauce made from fresh chilies and spices.</p>
       <p><strong>Price:</strong> ₦18,000 / $15</p>
       <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Pepper%20Sauce%20(500g)%20for%20₦18,000/$15" class="order-now">Order Now</a>
-      <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+      <button class="pay-now-btn" data-product="Pepper Sauce (Small)" data-amount="18000">Pay Now</button>
     </div>
   </div>
 
@@ -302,7 +333,7 @@
       <p><strong>Details:</strong> Smaller size of our signature pepper sauce Ayamashe made from fresh chilies and spices.</p>
       <p><strong>Price:</strong> ₦18,000 / $15</p>
       <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Pepper%20Sauce%20Ayamashe%20(500g)%20for%20₦18,000/$15" class="order-now">Order Now</a>
-      <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+      <button class="pay-now-btn" data-product="Ayamashe-500 (Small)" data-amount="18000">Pay Now</button>
     </div>
   </div>
 
@@ -321,7 +352,7 @@
       <p><strong>Details:</strong> Crispy, crunchy and tasty chips — perfect snack anytime.</p>
       <p><strong>Price:</strong> ₦2,000</p>
       <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Chips%20(550g)%20for%20₦2,000" class="order-now">Order Now</a>
-      <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+      <button class="pay-now-btn" data-product="Chips" data-amount="2000">Pay Now</button>
     </div>
   </div>
 
@@ -342,7 +373,7 @@
       <p><strong>Details:</strong> Hot, aromatic chili oil — a spicy kick for every meal.</p>
       <p><strong>Price:</strong> ₦10,000 / $8</p>
       <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Chili%20Oil%20for%20₦10,000/$8" class="order-now">Order Now</a>
-      <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+      <button class="pay-now-btn" data-product="chili-oil" data-amount="10000">Pay Now</button>
     </div>
   </div>
 
@@ -362,7 +393,7 @@
       <p><strong>Details:</strong> Soft, fresh bread baked with love.</p>
       <p><strong>Price:</strong> ₦1,500</p>
       <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Bread%20(Big)%20for%20₦1,500" class="order-now">Order Now</a>
-      <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+      <button class="pay-now-btn" data-product="Bread (Big)" data-amount="1500">Pay Now</button>
     </div>
   </div>
 
@@ -382,11 +413,12 @@
       <p><strong>Details:</strong> Sweet and crunchy popcorn — perfect for movies and snacking.</p>
       <p><strong>Price:</strong> ₦500</p>
       <a href="https://wa.me/2348057453601?text=Hello%20Monayz,%20I%20want%20Popcorn%20for%20₦500" class="order-now">Order Now</a>
-      <button class="pay-now" type="button" id="pay-now">Pay Now</button>
+      <button class="pay-now-btn" data-product="Popcorn" data-amount="500">Pay Now</button>
     </div>
   </div>
 
   <!-- Scripts -->
+  <script src="https://checkout.flutterwave.com/v3.js"></script>
   <script>
     // Modal functions
     function openModal(id) {
@@ -416,27 +448,37 @@
     }
 
 // Flutterwave Payment Integration
-const amount = document.getElementById("product-price").value;
-document.getElementById("pay-now").addEventListener("click", function () {
-  FlutterwaveCheckout({
-    public_key: "FLWPUBK-8d85ae71757c0ee2ea82956b5eb17461-X", // Replace with your Flutterwave public key
-    tx_ref: "tx-" + Date.now(),
-    amount: 25000,
-    currency: "NGN",
-    payment_options: "card, banktransfer, ussd",
-    redirect_url: "https://yourwebsite.com/payment-success.html",
-    customer: {
-      email: "fbmonayajo@yahoo.com",
-      phone_number: "2348057453601",
-      name: "Monayz Customer",
-    },
-    customizations: {
-      title: "Monayz Foods Payment",
-      description: "Payment for Product Purchase",
-      logo: "https://monayz.com.ng/images/monayz-logo.png",
-    },
+// Attach click listeners to all Pay Now buttons
+  document.querySelectorAll(".pay-now-btn").forEach(button => {
+    button.addEventListener("click", function () {
+      const productName = this.getAttribute("data-product");
+      const amount = parseFloat(this.getAttribute("data-amount"));
+
+     if (typeof FlutterwaveCheckout !== "function") {
+        alert("Payment system not ready. Please refresh and try again.");
+        return;
+      }
+
+      FlutterwaveCheckout({
+        public_key: "FLWPUBK-8d85ae71757c0ee2ea82956b5eb17461-X",
+        tx_ref: "MONAYZ-" + Date.now(),
+        amount: amount,
+        currency: "NGN",
+        payment_options: "card, banktransfer, ussd",
+        redirect_url: "https://monay.com.ng/payment-success.html",
+        customer: {
+          email: "fbmonayajo@yahoo.com",
+          phone_number: "2348057453601",
+          name: "Monayz Customer",
+        },
+        customizations: {
+          title: "Monayz Foods Payment",
+          description: `Payment for ${productName}`,
+          logo: "https://monay.com.ng/images/monayz-logo.png",
+        },
+      });
+    });
   });
-});
-  </script>
+</script>
 </body>
 </html>

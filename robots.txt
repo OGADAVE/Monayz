@@ -1,0 +1,11 @@
+# robots.txt for Monayz Foods
+User-agent: *
+Allow: /
+
+# Sitemap link (important for SEO)
+Sitemap: https://monay.com.ng/sitemap.xml
+
+# Optional: Prevent search engines from crawling admin or checkout pages
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /cart/
